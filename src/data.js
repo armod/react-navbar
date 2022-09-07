@@ -22,6 +22,11 @@ export const links = [
     url: '/contact',
     text: 'contact',
   },
+  {
+    id: 5,
+    url: '/profile',
+    text: 'profile',
+  },
 ]
 
 export const social = [
@@ -43,6 +48,6 @@ export const social = [
   {
     id: 4,
     url: 'www.twitter.com',
-    icon: <FaTwitter />,
+    icon: <FaBehance />,
   },
 ]

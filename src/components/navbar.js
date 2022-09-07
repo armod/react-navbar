@@ -5,6 +5,13 @@ import logo from '../logo.svg'
 
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false)
+  const linksContainerRef = useRef(null)
+  const linksRef = useRef(null)
+
+  useEffect(() => {
+    const linksHeight = linksRef.current.getBoundingClientRect()
+    console.log(linksHeight)
+  }, [showLinks])
   return (
     <nav>
       <div className='nav-center'>
@@ -18,8 +25,13 @@ const Navbar = () => {
           </button>
         </div>
         {showLinks && (
-          <div className='links-container show-container'>
-            <ul className='links'>
+          <div className='links-container' ref={linksContainerRef}>
+            {/* to uzycie wymaga na sztywno deklarowanie wysokosci kontenera <div
+             className={`${
+               showLinks ? 'links-container show-container' : 'links-container'
+             }`}
+           > */}
+            <ul className='links' ref={linksRef}>
               {links.map((link) => {
                 const { id, url, text } = link
                 return (
